@@ -1,0 +1,64 @@
+.checkout {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin: 1.2rem auto;
+  text-align: center;
+  position: relative;
+}
+
+.checkout-subtitle {
+  background: whitesmoke;
+  width: 50vw;
+  color: grey;
+  font-weight: 100;
+  letter-spacing: 3px;
+  transform: skew(-12deg);
+  font-size: 1.1rem;
+  padding: 0.15rem;
+  border-bottom: 1px solid rgba(190, 190, 190, 0.884);
+}
+
+.ingredient {
+  text-transform: capitalize;
+  margin: 1rem auto;
+  transform: skew(-15deg);
+}
+
+.item {
+  font-weight: 100;
+  padding: 0.1rem;
+  font-size: 0.9rem;
+  transform: skew(-10deg);
+}
+
+.success {
+  display: grid;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+}
+
+.pizza-guy {
+  margin-top: -160px;
+  width: 53%;
+}
+
+.main-text {
+  color: grey;
+  transform: skew(-15deg);
+  padding: 0.1rem;
+  padding: 0.2rem 0.8rem;
+  margin-left: 15.5rem;
+  font-size: 0.9rem;
+}
+
+.success-title {
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.text {
+  background: whitesmoke;
+  font-weight: 200;
+}

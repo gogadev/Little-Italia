@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
 
-function App() {
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Header from "./components/header/Header";
+import Customize from "./components/customize/Customize";
+import Checkout from "./components/checkout/Checkout";
+
+import "./App.css";
+
+const App = () => {
+  const [ingredients, setIngredients] = useState({
+    mushrooms: false,
+    olives: false,
+    anchovies: false,
+    sauce: false,
+  });
+
+  useEffect(() => {
+    const data = localStorage.getItem("ingredients");
+    if (data) {
+      setIngredients(JSON.parse(data));
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Customize
+              ingredients={ingredients}
+              setIngredients={setIngredients}
+            />
+          </Route>
+          <Route path="/checkout">
+            <Checkout ingredients={ingredients} />
+          </Route>
+        </Switch>
+      </Router>
+    </React.Fragment>
   );
-}
+};
 
 export default App;
